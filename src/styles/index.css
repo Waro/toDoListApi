@@ -1,12 +1,35 @@
 
-/* 
+body{
+    background-color: rgb(020, 020, 020);    
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.page{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
 
-*/
+.blocco {
+    height: 100%;
+    width: 400px;
+    background-color: rgb(40, 40, 40);
+ }
+
+.font-link {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+  
+  h1{
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 1px solid #888;
+
+  }
+  
+  ul{
+    color: white;
+    font-weight: 300;
+    font-size: large;
+  }
