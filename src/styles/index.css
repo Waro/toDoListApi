@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgb(020, 020, 020);    
+    background-color: rgb(040, 040, 040);    
 }
 
 .page{
@@ -38,3 +38,21 @@ body{
     background-color: rgb(40, 40, 40);
 
   }
+  ul{
+    text-align: left;
+  }
+
+  .list{
+    display: flex;
+  }
+
+  .bin{
+    display:none;
+    background-color: none;
+  }
+
+  .task:hover +.bin, .bin:hover{
+    background-color: none;
+    display: block;
+  }
+  

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
@@ -22,30 +23,33 @@ const Home = () => {
 		setNewItem("");
 	}
 	
+	function deleteItem(id){
+		const newArray = items.filter(item => item.id !== id);
+		setItems(newArray);
+
+	}
+
 	return (
 		<div className="page">
 			<div className="text-center blocco">
 				<h1 className="text-center mt-5 font-link">Todo List</h1>
 					<div>
-					<Form>	
-					<Form.Group className="mb-3 box border-right-0" id="task">
-					<Form.Control
-					className="box"
-					type="text"
-					placeholder="Add a ToDo"
-					value= {newItem}
-					onChange={e=> setNewItem(e.target.value) }
-					/>
-					</Form.Group>
-					</Form>	
-					
-					<Button variant="outline-light" size="s" onClick={() => addItem()}><FontAwesomeIcon icon={faCirclePlus} size="sm" /></Button>
-
+						<InputGroup className=" box mb-3">
+							<Form.Control
+								className=" box"
+								placeholder="Add ToDo"
+								value= {newItem}
+								onChange={e=> setNewItem(e.target.value) }
+							/>
+							<InputGroup.Text Button variant="outline-light" size="s" onClick={() => addItem()}><FontAwesomeIcon icon={faCirclePlus} size="lg" /></InputGroup.Text>
+						</InputGroup>
 						<ul>
 							{items.map(item => {
 								return (
-								<li key={item.id}>{item.value}</li>
-								)
+								<div className="list">
+								<li className="task" key={item.id}> {item.value} </li> 
+								<Button  className="bin outline-light" size="sm" onClick={() => deleteItem(item.id)}> <FontAwesomeIcon icon={faTrashCan} size="2xs" /> </Button>
+								</div>)
 							})}
 						</ul>
 
