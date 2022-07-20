@@ -15,12 +15,13 @@ const Home = () => {
 
 	function addItem() {
 		const item = {
-			id: Math.floor(Math.random()*1000),
+			id: newItem + items.length +1,
 			value: newItem,
 		};
 
 		setItems(oldList => [...oldList, item]);
 		setNewItem("");
+		console.log(item.id)
 	}
 	
 	function deleteItem(id){
