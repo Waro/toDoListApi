@@ -1,4 +1,10 @@
 import React, {useState} from "react";
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
 
 
 const Home = () => {
@@ -8,9 +14,7 @@ const Home = () => {
 
 	function addItem() {
 		const item = {
-			id: for (var i = 1; i < Infinity; i++) {
-				return: i
-			},
+			id: Math.floor(Math.random()*1000),
 			value: newItem,
 		};
 
@@ -23,15 +27,19 @@ const Home = () => {
 			<div className="text-center blocco">
 				<h1 className="text-center mt-5 font-link">Todo List</h1>
 					<div>
+					<Form>	
+					<Form.Group className="mb-3 box border-right-0" id="task">
+					<Form.Control
+					className="box"
+					type="text"
+					placeholder="Add a ToDo"
+					value= {newItem}
+					onChange={e=> setNewItem(e.target.value) }
+					/>
+					</Form.Group>
+					</Form>	
 					
-						<input
-						type="text"
-						placeholder="No tasks, add a task"
-						value= {newItem}
-						onChange={e=> setNewItem(e.target.value) }
-						/>
-
-						<button onClick={() => addItem()}> Add </button>
+					<Button variant="outline-light" size="s" onClick={() => addItem()}><FontAwesomeIcon icon={faCirclePlus} size="sm" /></Button>
 
 						<ul>
 							{items.map(item => {
