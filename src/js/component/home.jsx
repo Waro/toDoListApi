@@ -21,7 +21,6 @@ const Home = () => {
 
 		setItems(oldList => [...oldList, item]);
 		setNewItem("");
-		console.log(item.id)
 	}
 	
 	function deleteItem(id){
