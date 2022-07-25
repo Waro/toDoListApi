@@ -29,7 +29,7 @@ const updateFetchTodos = (todos) => {
     });
 }
 
-export const TodoList = () =>{
+export default TodoList = () =>{
     const [todos, setTodos] = useState  (INITIAL_STATE);
     const [newTodo, setNewTodo] = useState ("this is the default value")
 
@@ -38,7 +38,7 @@ export const TodoList = () =>{
         const newTodosList = todos.filter((todo) => todo.id ==! id);
         setTodos(newTodolist);
     }
-};
+
 
 const onSubmit = async (e) => {
     e.preventDefault();
@@ -73,5 +73,5 @@ return (
     </div>
 )
 
-
+}
 
